@@ -102,8 +102,8 @@ export default function AINotes() {
         limit={limitInfo.limit}
       />
       {/* Form Panel */}
-      <div className="lg:w-80 flex-shrink-0 lg:sticky lg:top-24 self-start">
-        <div className="bg-white/70 dark:bg-zinc-900/60 backdrop-blur-md border border-purple-100/70 dark:border-zinc-800/60 rounded-2xl p-4 shadow-sm h-[540px] flex flex-col justify-between">
+      <div className="w-full lg:w-80 flex-shrink-0 lg:sticky lg:top-24 lg:self-start">
+        <div className="bg-white/70 dark:bg-zinc-900/60 backdrop-blur-md border border-purple-100/70 dark:border-zinc-800/60 rounded-2xl p-4 shadow-sm h-auto lg:h-[540px] flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-2 mb-2">
               <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-purple-500 to-violet-700 flex items-center justify-center shadow-md shadow-purple-500/30">

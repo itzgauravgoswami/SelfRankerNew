@@ -87,7 +87,7 @@ export default function DashboardHeader({ profile, theme, toggleTheme, onMenuTog
           <Menu size={20} />
         </button>
         <div>
-          <h1 className="font-display font-bold text-base md:text-lg text-slate-800 dark:text-white leading-tight">
+          <h1 className="font-display font-bold text-sm sm:text-base md:text-lg text-slate-800 dark:text-white leading-tight">
             {title}
           </h1>
         </div>

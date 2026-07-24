@@ -236,7 +236,7 @@ function DashboardOverview({ profile, onUpgrade }) {
           </div>
 
           {/* Right: XP progress ring + mini stats */}
-          <div className="flex items-center gap-5 flex-shrink-0">
+          <div className="flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-start gap-4 sm:gap-5 flex-shrink-0">
             {/* XP ring */}
             <div className="relative flex-shrink-0">
               <StatRing percent={levelDetails.percent} color="#a78bfa" size={80} />

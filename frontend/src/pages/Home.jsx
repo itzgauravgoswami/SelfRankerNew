@@ -279,7 +279,7 @@ export default function Home({ theme, toggleTheme }) {
   };
 
   return (
-    <div className="relative min-h-screen text-slate-800 dark:text-zinc-350 antialiased selection:bg-purple-200 dark:selection:bg-purple-900/60 selection:text-purple-900 dark:selection:text-purple-100 transition-colors duration-300">
+    <div className="relative min-h-screen text-slate-800 dark:text-zinc-350 antialiased selection:bg-purple-200 dark:selection:bg-purple-900/60 selection:text-purple-900 dark:selection:text-purple-100 transition-colors duration-300 overflow-x-hidden">
       {/* Decorative Gradient Background Elements */}
       <div className="absolute top-0 right-1/4 w-[400px] h-[400px] bg-purple-200/30 dark:bg-purple-900/10 rounded-full blur-[100px] -z-10 pointer-events-none animate-pulse-glow" />
       <div className="absolute top-[30vh] left-1/4 w-[350px] h-[350px] bg-indigo-200/20 dark:bg-indigo-950/10 rounded-full blur-[120px] -z-10 pointer-events-none animate-float" />
@@ -324,7 +324,7 @@ export default function Home({ theme, toggleTheme }) {
           </div>
         </section>
 
-        <div className="w-full max-w-[85rem] mx-auto px-4 h-[3px] bg-gradient-to-r from-transparent via-15% via-purple-300/80 via-85% to-transparent opacity-75" />
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[3px] bg-gradient-to-r from-transparent via-15% via-purple-300/80 via-85% to-transparent opacity-75" />
 
         {/* ABOUT SECTION */}
         <section id="about" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-16 md:py-24">
@@ -412,7 +412,7 @@ export default function Home({ theme, toggleTheme }) {
           </div>
         </section>
 
-        <div className="w-full max-w-[85rem] mx-auto px-4 h-[3px] bg-gradient-to-r from-transparent via-15% via-purple-300/80 via-85% to-transparent opacity-75" />
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[3px] bg-gradient-to-r from-transparent via-15% via-purple-300/80 via-85% to-transparent opacity-75" />
 
         {/* FEATURES SECTION */}
         <section id="features" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-16 md:py-24">
@@ -440,7 +440,7 @@ export default function Home({ theme, toggleTheme }) {
           </div>
         </section>
 
-        <div className="w-full max-w-[85rem] mx-auto px-4 h-[3px] bg-gradient-to-r from-transparent via-15% via-purple-300/80 via-85% to-transparent opacity-75" />
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[3px] bg-gradient-to-r from-transparent via-15% via-purple-300/80 via-85% to-transparent opacity-75" />
 
         {/* HOW IT WORKS SECTION */}
         <section id="how-it-works" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-16 md:py-24">
@@ -468,7 +468,7 @@ export default function Home({ theme, toggleTheme }) {
           </div>
         </section>
 
-        <div className="w-full max-w-[85rem] mx-auto px-4 h-[3px] bg-gradient-to-r from-transparent via-15% via-purple-300/80 via-85% to-transparent opacity-75" />
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[3px] bg-gradient-to-r from-transparent via-15% via-purple-300/80 via-85% to-transparent opacity-75" />
 
         {/* TESTIMONIALS SECTION */}
         <section id="testimonials" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-16 md:py-24">
@@ -507,7 +507,7 @@ export default function Home({ theme, toggleTheme }) {
           </div>
         </section>
 
-        <div className="w-full max-w-[85rem] mx-auto px-4 h-[3px] bg-gradient-to-r from-transparent via-15% via-purple-300/80 via-85% to-transparent opacity-75" />
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[3px] bg-gradient-to-r from-transparent via-15% via-purple-300/80 via-85% to-transparent opacity-75" />
 
         {/* PRICING SECTION */}
         <section id="pricing" className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-16 md:py-24">
@@ -567,7 +567,7 @@ export default function Home({ theme, toggleTheme }) {
           </div>
         </section>
 
-        <div className="w-full max-w-[85rem] mx-auto px-4 h-[3px] bg-gradient-to-r from-transparent via-15% via-purple-300/80 via-85% to-transparent opacity-75" />
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[3px] bg-gradient-to-r from-transparent via-15% via-purple-300/80 via-85% to-transparent opacity-75" />
 
         {/* FAQ SECTION */}
         <section id="faq" className="px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto py-16 md:py-24">
@@ -594,7 +594,7 @@ export default function Home({ theme, toggleTheme }) {
           </div>
         </section>
 
-        <div className="w-full max-w-[85rem] mx-auto px-4 h-[3px] bg-gradient-to-r from-transparent via-15% via-purple-300/80 via-85% to-transparent opacity-75" />
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[3px] bg-gradient-to-r from-transparent via-15% via-purple-300/80 via-85% to-transparent opacity-75" />
 
         {/* FOUNDER SECTION */}
         <section id="founder" className="px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto py-16 md:py-24">

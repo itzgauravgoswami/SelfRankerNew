@@ -133,7 +133,7 @@ export default function Gamification() {
   return (
     <div className="space-y-6">
       {/* Tab Nav */}
-      <div className="flex gap-2 p-1 bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md border border-purple-100/70 dark:border-zinc-800/60 rounded-2xl w-fit">
+      <div className="flex flex-wrap gap-2 p-1 bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md border border-purple-100/70 dark:border-zinc-800/60 rounded-2xl w-fit max-w-full">
         {[['overview', 'Overview'], ['badges', 'Badges'], ['leaderboard', 'Leaderboard']].map(([id, label]) => (
           <button key={id} onClick={() => setActiveTab(id)}
             className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${activeTab === id ? 'bg-purple-600 text-white shadow-md shadow-purple-500/25' : 'text-slate-600 dark:text-zinc-400 hover:text-purple-700 dark:hover:text-purple-300'}`}>
@@ -146,7 +146,7 @@ export default function Gamification() {
       {activeTab === 'overview' && (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
           {/* Level Card */}
-          <div className="md:col-span-2 xl:col-span-1 bg-white/70 dark:bg-zinc-900/60 backdrop-blur-md border border-purple-100/70 dark:border-zinc-800/60 rounded-2xl p-6 shadow-sm">
+          <div className="md:col-span-2 xl:col-span-1 bg-white/70 dark:bg-zinc-900/60 backdrop-blur-md border border-purple-100/70 dark:border-zinc-800/60 rounded-2xl p-4 sm:p-6 shadow-sm">
             <p className="text-xs font-semibold text-slate-500 dark:text-zinc-400 mb-4">Your Level</p>
             <div className="flex items-center gap-4 mb-5">
               <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${currentLevel.color} flex items-center justify-center shadow-lg`}>
@@ -187,7 +187,7 @@ export default function Gamification() {
           </div>
 
           {/* Subject Progress */}
-          <div className="md:col-span-2 xl:col-span-3 bg-white/70 dark:bg-zinc-900/60 backdrop-blur-md border border-purple-100/70 dark:border-zinc-800/60 rounded-2xl p-6 shadow-sm">
+          <div className="md:col-span-2 xl:col-span-3 bg-white/70 dark:bg-zinc-900/60 backdrop-blur-md border border-purple-100/70 dark:border-zinc-800/60 rounded-2xl p-4 sm:p-6 shadow-sm">
             <p className="text-sm font-semibold text-slate-700 dark:text-zinc-200 mb-4 flex items-center gap-2">
               <TrendingUp size={16} className="text-purple-500" />Subject Mastery
             </p>
@@ -237,7 +237,7 @@ export default function Gamification() {
       {/* Leaderboard Tab */}
       {activeTab === 'leaderboard' && (
         <div className="bg-white/70 dark:bg-zinc-900/60 backdrop-blur-md border border-purple-100/70 dark:border-zinc-800/60 rounded-2xl shadow-sm overflow-hidden">
-          <div className="px-6 py-4 border-b border-purple-100/50 dark:border-zinc-800/50">
+          <div className="px-4 sm:px-6 py-4 border-b border-purple-100/50 dark:border-zinc-800/50">
             <p className="font-display font-bold text-slate-800 dark:text-white flex items-center gap-2">
               <Users size={16} className="text-purple-500" />Global Leaderboard
             </p>
@@ -247,7 +247,7 @@ export default function Gamification() {
               const userBadge = getHighestBadge(xp);
               return (
                 <div key={rank}
-                  className={`flex items-center gap-4 px-6 py-4 transition-colors ${isUser ? 'bg-purple-50/70 dark:bg-purple-950/20' : 'hover:bg-purple-50/30 dark:hover:bg-zinc-800/30'}`}>
+                  className={`flex items-center gap-4 px-4 sm:px-6 py-4 transition-colors ${isUser ? 'bg-purple-50/70 dark:bg-purple-950/20' : 'hover:bg-purple-50/30 dark:hover:bg-zinc-800/30'}`}>
                   <div className={`w-8 text-center font-display font-bold text-sm ${rank === 1 ? 'text-yellow-500' : rank === 2 ? 'text-slate-500' : rank === 3 ? 'text-amber-600' : 'text-slate-400 dark:text-zinc-500'}`}>
                     {rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : `#${rank}`}
                   </div>
