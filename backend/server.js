@@ -20,12 +20,44 @@ const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
 // Connect to Database
 connectDB();
 
-// Security Middleware
-app.use(helmet());
-app.use(cors({
-  origin: FRONTEND_URL,
-  credentials: true
+// CORS Configuration
+const allowedOrigins = [
+  FRONTEND_URL,
+  'https://selfrankernew.vercel.app',
+  'https://www.selfrankernew.vercel.app',
+  'https://selfrankernew.gauravgoswami.me',
+  'https://www.selfrankernew.gauravgoswami.me',
+  'http://localhost:5173',
+  'http://localhost:3000'
+].filter(Boolean);
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps, curl, or server-to-server)
+    if (!origin) return callback(null, true);
+    
+    const isAllowed = allowedOrigins.includes(origin) || 
+                      origin.startsWith('https://selfrankernew-');
+                      
+    if (isAllowed) {
+      callback(null, true);
+    } else {
+      callback(null, false); // Block CORS by returning false without throwing uncaught server exception
+    }
+  },
+  credentials: true,
+  optionsSuccessStatus: 204
+};
+
+// Apply CORS middleware before Helmet to resolve preflight requests correctly
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
+
+// Security Middleware (relax CORP to permit cross-origin access by frontend)
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: 'cross-origin' }
 }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

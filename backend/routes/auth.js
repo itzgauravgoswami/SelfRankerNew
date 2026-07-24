@@ -218,7 +218,7 @@ router.post('/verify-register-otp', async (req, res) => {
     await PendingRegistration.deleteOne({ email: email.toLowerCase() });
 
     // Automatically create session and login user
-    return createSession(newUser, req, res, false);
+    return await createSession(newUser, req, res, false);
   } catch (err) {
     console.error('Verify register OTP error:', err);
     res.status(500).json({ error: 'Internal server error' });
@@ -268,7 +268,7 @@ router.post('/social-register', async (req, res) => {
 
     await newUser.save();
 
-    return createSession(newUser, req, res, false);
+    return await createSession(newUser, req, res, false);
   } catch (err) {
     console.error('Social register error:', err);
     res.status(500).json({ error: 'Internal server error' });
@@ -364,7 +364,7 @@ router.post('/register', async (req, res) => {
     const newUser = new User({ name, email, password: hashedPassword });
     await newUser.save();
 
-    return createSession(newUser, req, res, false);
+    return await createSession(newUser, req, res, false);
   } catch (err) {
     console.error('Register error:', err);
     res.status(500).json({ error: 'Internal server error' });
@@ -389,7 +389,7 @@ router.post('/login', async (req, res) => {
       return res.status(400).json({ error: 'Invalid email or password.' });
     }
 
-    return createSession(user, req, res, !!force, req.body.evictSessionId);
+    return await createSession(user, req, res, !!force, req.body.evictSessionId);
   } catch (err) {
     console.error('Login error:', err);
     res.status(500).json({ error: 'Internal server error' });
@@ -434,7 +434,7 @@ router.post('/google', async (req, res) => {
       return res.json({ requiresPassword: true, email, name, avatarUrl: picture || null, googleId });
     }
 
-    return createSession(user, req, res, !!force, req.body.evictSessionId);
+    return await createSession(user, req, res, !!force, req.body.evictSessionId);
   } catch (err) {
     console.error('Google Auth error:', err);
     res.status(400).json({ error: 'Google authentication failed.' });
@@ -463,7 +463,7 @@ router.post('/google-token', async (req, res) => {
       return res.json({ requiresPassword: true, email, name, avatarUrl: picture || null, googleId });
     }
 
-    return createSession(user, req, res, !!force, req.body.evictSessionId);
+    return await createSession(user, req, res, !!force, req.body.evictSessionId);
   } catch (err) {
     console.error('Google Access Token verification failed:', err.message);
     res.status(400).json({ error: 'Google authentication failed.' });
@@ -516,7 +516,7 @@ router.post('/github', async (req, res) => {
       await user.save();
     }
 
-    return createSession(user, req, res, !!force, req.body.evictSessionId);
+    return await createSession(user, req, res, !!force, req.body.evictSessionId);
   } catch (err) {
     console.error('GitHub Auth error:', err);
     res.status(400).json({ error: 'GitHub authentication failed.' });
