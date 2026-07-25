@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import GetStarted from './pages/GetStarted';
 import Dashboard from './pages/Dashboard';
 import GitHubCallback from './pages/GitHubCallback';
 import ForgotPassword from './pages/ForgotPassword';
+import NotFound from './pages/NotFound';
 
 export default function App() {
   const [theme, setTheme] = useState(() => {
@@ -39,6 +40,8 @@ export default function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/github-callback" element={<GitHubCallback />} />
         <Route path="/dashboard/*" element={<Dashboard theme={theme} toggleTheme={toggleTheme} />} />
+        <Route path="/404" element={<NotFound theme={theme} toggleTheme={toggleTheme} />} />
+        <Route path="*" element={<Navigate to="/404" replace />} />
       </Routes>
     </Router>
   );

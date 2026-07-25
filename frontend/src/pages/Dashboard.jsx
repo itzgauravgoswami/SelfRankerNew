@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, Navigate } from 'react-router-dom';
 import Sidebar from '../components/dashboard/Sidebar';
 import DashboardHeader from '../components/dashboard/DashboardHeader';
 import AINotes from './dashboard/AINotes';
@@ -535,6 +535,7 @@ export default function Dashboard({ theme, toggleTheme }) {
               <Route path="analytics" element={<Analytics />} />
               <Route path="learning-path" element={<LearningPath />} />
               <Route path="settings" element={<AccountSettings onProfileUpdate={setProfile} />} />
+              <Route path="*" element={<Navigate to="/404" replace />} />
             </Routes>
           </UsageProvider>
         </main>
